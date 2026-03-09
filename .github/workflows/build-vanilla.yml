@@ -34,7 +34,7 @@ jobs:
           platforms: linux/386,linux/amd64,linux/arm/v7,linux/arm64,linux/ppc64le          
           push: true
           tags: |
-            ryshe/terraria:vanilla-latest
-            ryshe/terraria:${{ steps.get_version.outputs.VERSION }}
+            ${{ secrets.DOCKER_USERNAME }}/terraria:vanilla-latest
+            ${{ secrets.DOCKER_USERNAME }}/terraria:${{ steps.get_version.outputs.VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
